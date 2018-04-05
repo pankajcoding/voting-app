@@ -38,14 +38,15 @@
                 <div class="col-md-6 col-sm-12">
                     <div class="left-section">
                         <h4><%= poll.title %></h4>
-                          <form class="form-choice">
+                          <form class="form-choice" method="post" action="choice">
                                <% for (var i = 0; i < poll.options.length; i++) { %>
                                 <p>
-                                    <input type="radio" name="is_public" value=<%=i%> />
+                                    <input type="radio" name="choice" value=<%=i%> />
                                     
                                         <%=  poll.options[i].optionTitle %> </span>
                                </p>
-                                <% } %>   
+                                <% } %>
+                                <input type="text" name="poll_id" value="<%=  poll._id%>" style="display:none;" />
                                 
                                 <input type="submit" class="btn btn-success"/>
                             </form> 

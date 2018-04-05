@@ -89,7 +89,49 @@ module.exports = function(app, passport) {
 		    
 		});
 
-
+	app.route('/poll/choice')
+		.post(function(req,res){
+			var filledChoice=req.body.choice;
+			var poll_id=req.body.poll_id;
+			console.log(filledChoice,poll_id);
+			
+			
+			
+			
+			
+				Poll.findOne({'_id':poll_id},function(err,poll){
+				if(err){
+					res.send(err);
+				}
+				poll.options[filledChoice].votes=poll.options[filledChoice].votes+1;
+				poll.options.forEach(option=>{
+					console.log("=====")
+						console.log(poll);
+				});
+				poll.save(function(err,poll){
+					if(err){
+						res.send(err);
+					}
+					var newurl=`/poll/${poll_id}`
+					res.redirect(newurl);	
+					
+				});
+				
+				});
+				
+				
+				
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		});
+		
 	app.route('/login')
 		.get(function(req, res) {
 			res.sendFile(path + '/public/login.html');
