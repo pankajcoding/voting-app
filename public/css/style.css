@@ -1,0 +1,28 @@
+.form-choice{
+    background-color: ;
+}
+
+.form-choice p{
+ text-align: left;   
+ padding: 20px;
+ -webkit-box-sizing: border-box;
+ -moz-box-sizing: border-box;
+ box-sizing: border-box;
+}
+
+.left-section{
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.2);
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    padding: 20px;    
+}
+
+.viewpoll-cont{
+    padding-top: 50px;    
+}
+
+.form-choice input[type="radio"] {
+    position: relative;
+    top: 1px;
+    margin-right: 5px;
+}

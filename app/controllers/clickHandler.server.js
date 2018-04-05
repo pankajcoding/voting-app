@@ -1,7 +1,7 @@
 'use strict';
 
 var Users = require('../models/users.js');
-
+var Polls = require('../models/polls.js');
 function ClickHandler () {
 
 	this.getClicks = function (req, res) {
@@ -24,6 +24,7 @@ function ClickHandler () {
 				}
 			);
 	};
+	
 
 	this.resetClicks = function (req, res) {
 		Users
@@ -35,6 +36,19 @@ function ClickHandler () {
 				}
 			);
 	};
+	
+	
+	
+	// this.addPoll = function (req, res) {
+	// 	Users
+	// 		.findOneAndUpdate({ 'github.id': req.user.github.id }, { $inc: { 'nbrClicks.clicks': 1 } })
+	// 		.exec(function (err, result) {
+	// 				if (err) { throw err; }
+
+	// 				res.json(result.nbrClicks);
+	// 			}
+	// 		);
+	// };
 
 }
 
